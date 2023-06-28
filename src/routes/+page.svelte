@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { defaultConfig, isErckitSetup, configuredConnectors } from '$lib/stores/erckit';
 	import { PUBLIC_WALLETCONNECT_PROJECTID, PUBLIC_ALCHEMY_KEY } from '$env/static/public';
-	import { connect } from '@wagmi/core';
+	import ConnectButton from '$lib/components/connectButton/connect.svelte';
 
 	onMount(async () => {
 		const erckit = defaultConfig({
@@ -15,9 +15,7 @@
 </script>
 
 {#if $isErckitSetup}
-	{#each $configuredConnectors as connector}
-		<button on:click={async () => await connect({ connector })}>{connector.id}</button>
-	{/each}
+	<ConnectButton />
 {:else}
 	<p>ERCKit is loading...</p>
 {/if}

@@ -22,6 +22,16 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./siwe": {
+			"types": "./dist/index.d.ts",
+			"import": "./src/siwe/index.js",
+			"svelte": "./src/siwe/index.js"
+		},
+		"./components": {
+			"types": "./dist/index.d.ts",
+			"import": "./src/components/index.js",
+			"svelte": "./src/components/index.js"
 		}
 	},
 	"files": [

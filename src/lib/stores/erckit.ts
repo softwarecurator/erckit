@@ -137,7 +137,7 @@ export const defaultConfig = ({
 		publicClient: configuredPublicClient,
 		chains: configuredChains,
 		webSocketPublicClient: configuredWebSocketPublicClient
-	} = configureChains(chains, providers);
+	} = configureChains(chains, providers, { stallTimeout });
 
 	if (connectors) configuredConnectors.set(connectors);
 
